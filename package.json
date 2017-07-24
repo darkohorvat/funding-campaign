@@ -1,0 +1,20 @@
+{
+  "name": "funding-campain",
+  "version": "1.0.0",
+  "description": "Crowdfunding widgets",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/funding-campain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3"
+  }
+}

@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <style>
+    #myProgress {
+    width: 100%;
+    background-color: lightgrey;
+  }
+  #myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #009900;
+  }
+  .button {
+    background-color: #009900;
+    color: white;
+    border: none;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: medium;
+    margin-top: 20px;
+  }
+    </style>
+    <script>
+      function updateProgress(value) {
+        var elem = document.getElementById("myBar");
+		var url = (window.location != window.parent.location)
+            ? document.referrer
+            : document.location.href;
+        elem.style.width = value + '%'+url;
+      }
+    </script>
+  </head>
+  <body onload="updateProgress(<%= currentAmmount/goal*100 %>)">
+    <div id="statusContainer" style="border: solid thin black;display: inline-block;">
+      <table>
+        <tr>
+          <td>
+            <div id="myProgress">
+            <div id="myBar"></div>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: #009900;font-size: large;margin-top: 10px;">
+              &euro;<%= currentAmmount %>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: grey;"> pledged of &euro;<%= goal %> total</td>
+        </tr>
+        <tr>
+          <td style="color: #009900;font-size: large;margin-top: 10px;">
+              <%= backers  %>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: grey;"> backers</td>
+        </tr>
+        <tr>
+          <td style="color: #009900;font-size: large;margin-top: 10px;">
+              <%= timeRemaining  %>
+          </td>
+        </tr>
+        <tr>
+          <td style="color: grey;"> hours to go</td>
+        </tr>
+        <tr>
+          <td><input type='button' value="Back this project" class="button" /></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
